@@ -1,0 +1,52 @@
+<form (ngSubmit)="register()"  #registerForm="ngForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="firstName"
+               [(ngModel)]="firstName" name="firstName" required />
+        <label for="firstName">First Name</label>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="lastName"
+               [(ngModel)]="lastName" name="lastName" required />
+        <label for="lastName">Last Name</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="username"
+           [(ngModel)]="username" name="username" required />
+    <label for="username">Email Address / Username</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="password"
+           [(ngModel)]="password" name="password" required />
+    <label for="password">Password</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <select class="form-select" [(ngModel)]="role" name="role" id="role" required>
+      <option value="ADMIN">ADMIN</option>
+      <option value="AGENT">AGENT</option>
+    </select>
+    <label for="role">Role</label>
+  </div>
+
+  <div class="form-check mt-3">
+    <input class="form-check-input input-primary" type="checkbox" id="terms" required />
+    <label class="form-check-label" for="terms">
+      <h5>Agree with <span>Terms & Condition.</span></h5>
+    </label>
+  </div>
+
+  <div class="d-grid mt-4">
+    <button type="submit" class="btn btn-secondary p-2" [disabled]="!registerForm.form.valid">
+      Sign Up
+    </button>
+  </div>
+</form>
